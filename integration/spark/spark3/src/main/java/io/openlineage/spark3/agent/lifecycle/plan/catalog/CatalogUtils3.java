@@ -34,7 +34,10 @@ public class CatalogUtils3 {
   }
 
   private static List<RelationHandler> getRelationHandlers() {
-    List<RelationHandler> handlers = Arrays.asList(new CosmosHandler());
+    List<RelationHandler> handlers =
+            Arrays.asList(
+                    new CosmosHandler(),
+                    new DorisHandler());
     return handlers.stream().filter(RelationHandler::hasClasses).collect(Collectors.toList());
   }
 
